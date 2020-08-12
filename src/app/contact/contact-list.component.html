@@ -1,0 +1,46 @@
+<div  class="bg-container" style="position: relative;">
+    <hr>
+    <div  class="mainmenu container">
+        <div class="leftmenu">
+            <input id="search" #search placeholder="Search" [(ngModel)] = "searchTerm" type="text" (keyup.enter)="contactFilter(search.value)" >
+            <button id="buttonSearch" >Search</button>
+        </div>
+        <div class="rightmenu">            
+            <button id="postContactButton"  class="btn btn-success btn-md" (click)="createContact()" >Add new Record</button>   
+        </div>      
+    </div>
+     <div  class="container" style="position: relative;">
+        <table class="table" style="background-color: white;">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">No.</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Update</th> 
+                    <th scope="col">Delete</th> 
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let contact of contacts ">
+                    <td>{{contact.id}}</td>
+                    <td>{{contact.firstname}}</td>
+                    <td>{{contact.lastname}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>
+                        <button class="btn btn-primary bt-sm" (click)="updateContact(contact)">Update</button>                    
+                    </td>
+                    <td>
+                        <button class="btn btn-danger bt-sm" (click)="deleteContact(contact)">Delete</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+     </div>
+       
+
+</div>
+
