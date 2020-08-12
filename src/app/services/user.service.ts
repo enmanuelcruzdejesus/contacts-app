@@ -21,14 +21,14 @@ export class UserService {
   async login(email: string, password: string){
     await this.firebaseAuth.signInWithEmailAndPassword(email,password).then(res=>{
       this.isLoggedIn = true;
+      console.log(res);
       localStorage.setItem('user',JSON.stringify(res.user));
 
     });
   }
 
   async signUp(email: string, password: string){
-    await this.firebaseAuth.createUserWithEmailAndPassword(email,password).then(res=>{
-      this.isLoggedIn = true;
+    await this.firebaseAuth.createUserWithEmailAndPassword(email,password).then(res=>{    
       localStorage.setItem('user',JSON.stringify(res.user));
 
     });
@@ -37,6 +37,7 @@ export class UserService {
 
 
    logout(): void{
+     this.isLoggedIn = false;
    this.firebaseAuth.signOut();
    localStorage.removeItem("user");
   }

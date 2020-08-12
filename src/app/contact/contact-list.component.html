@@ -3,7 +3,7 @@
     <div  class="mainmenu container">
         <div class="leftmenu">
             <input id="search" #search placeholder="Search" [(ngModel)] = "searchTerm" type="text" (keyup.enter)="contactFilter(search.value)" >
-            <button id="buttonSearch" >Search</button>
+            <button id="buttonSearch" (click)= "contactFilter(search.value)" >Search</button>
         </div>
         <div class="rightmenu">            
             <button id="postContactButton"  class="btn btn-success btn-md" (click)="createContact()" >Add new Record</button>   

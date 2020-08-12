@@ -12,14 +12,14 @@
             <a class="nav-link" routerLink="/contacts">Home <span class="sr-only">(current)</span></a>
           </li>
           
-          <li class="nav-item" *ngIf="!userLoggedIn()">
+          <!-- <li class="nav-item" *ngIf="!userLoggedIn()">
             <a class="nav-link"  routerLink="/signup">Sign Up <span class="sr-only">(current)</span></a>
           </li>
           
           <li class="nav-item" *ngIf="!userLoggedIn()">
             <a class="nav-link" routerLink="/login">Login</a>
-          </li>
-          <li class="nav-item" *ngIf="userLoggedIn()">
+          </li> -->
+          <li class="nav-item" *ngIf="userLoggedIn()">        
             <a class="nav-link" (click)="Logout()">Logout</a>
           </li>
         
@@ -27,7 +27,7 @@
       </div>
     </nav>
   </div>
-  <div style="margin-top: 50px;">
+  <div style="margin-top: 50px;">    
     <router-outlet>
     </router-outlet>
   </div>
