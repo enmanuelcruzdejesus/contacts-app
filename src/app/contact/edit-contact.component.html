@@ -1,1 +1,33 @@
-<p>edit-contact works!</p>
+<div class="container">
+    <h1>Edit Contact</h1>
+    <form action="" method="POST" >
+        <div class="form-group">
+            <label for="firstname" class="control-label">First Name</label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)] = "contact.firstname" class="col-md-5 form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname" class="control-label">Last Name</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)] = "contact.lastname" class="col-md-5 form-control" required>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="email" class="control-label">Email </label>
+            <input type="email" id="email" class="col-md-5 form-control" name="email" [(ngModel)] = "contact.email" />
+        </div>
+
+        <div class="form-group">
+            <label for="phone" class="control-label">Phone </label>
+            <input type="text" id="phone" class="col-md-5 form-control" name="phone" [(ngModel)] = "contact.phone">
+        </div>
+      
+        <div class="panel-footer">
+            <button class="btn btn-primary" (click)="save()">Save</button>     
+        </div>
+
+
+
+    </form>
+</div>

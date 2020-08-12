@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import {FormsModule} from '@angular/forms';
@@ -30,6 +31,7 @@ import { SendEmailComponent } from './contact/send-email.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuth,
     FormsModule
 
   ],

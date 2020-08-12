@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contacts-app';
+   constructor(private service: UserService){
+
+   }
+
+  showNav(){
+    return true;
+  }
+  userLoggedIn(){
+    return this.service.IsLoggedIn();
+  }
+  Logout(){
+   this.service.logout();
+  }
 }
